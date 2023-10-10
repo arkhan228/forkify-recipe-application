@@ -11,6 +11,7 @@ class PaginationView extends View {
       .join('');
   }
 
+  // Handler for adding and removing bookmarks
   addHandlerRenderBookmarks(handler) {
     window.addEventListener('load', handler);
   }
