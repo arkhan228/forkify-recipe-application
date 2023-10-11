@@ -172,6 +172,7 @@ export const uploadRecipe = async function (newRecipe) {
     // Bookmarking the newly uploaded recipe
     toggleBookmark();
   } catch (err) {
+    console.error(err);
     throw err;
   }
 };
@@ -201,7 +202,7 @@ export const deleteRecipe = async function () {
   }
 };
 
-// Clear bookmarks (Only deveopment purposes)
+// Clear bookmarks (Deveopment purposes only)
 const clearBookmarks = function (start, count) {
   state.bookmarks.splice(start, count);
   localStorage.setItem('bookmarks', JSON.stringify(state.bookmarks));
