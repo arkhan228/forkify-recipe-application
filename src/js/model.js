@@ -121,7 +121,9 @@ export const toggleBookmark = function () {
 
 // Getting bookmarks from the local storage on page load
 const init = function () {
-  state.bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+  const storage = JSON.parse(localStorage.getItem('bookmarks'));
+
+  if (storage) state.bookmarks = storage;
 };
 
 init();
