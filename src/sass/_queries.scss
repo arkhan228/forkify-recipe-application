@@ -138,12 +138,14 @@
     width: 3rem;
   }
 
+  // Making upload form responsive
   .upload {
     .input-fields input {
       width: 90;
     }
   }
 
+  // Making upload form properly visible
   .add-recipe-window {
     width: 55rem;
     padding: 5rem 3rem;
@@ -172,6 +174,7 @@
     }
   }
 
+  // Making upload form responsive
   .upload {
     &__column {
       grid-template-columns: 1fr 2fr;
@@ -186,6 +189,7 @@
     }
   }
 
+  // Making upload form properly visible
   .add-recipe-window {
     width: 40rem;
   }
