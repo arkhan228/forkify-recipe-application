@@ -39,7 +39,7 @@ export const loadRecipe = async function (id) {
     state.recipe = recipeObject(data.data.recipe);
 
     // Checking if the recipe is bookmarked or not
-    if (state.bookmarks.some(bookmark => bookmark.id === state.recipe.id))
+    if (state.bookmarks?.some(bookmark => bookmark.id === state.recipe.id))
       state.recipe.bookmarked = true;
     else state.recipe.bookmarked = false;
   } catch (err) {
@@ -206,4 +206,4 @@ const clearBookmarks = function (start, count) {
   state.bookmarks.splice(start, count);
   localStorage.setItem('bookmarks', JSON.stringify(state.bookmarks));
 };
-// clearBookmarks(4, 2)
+// clearBookmarks(0, state.bookmarks.length - 1);
