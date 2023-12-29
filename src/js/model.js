@@ -39,7 +39,7 @@ export const loadRecipe = async function (id) {
     state.recipe = recipeObject(data.data.recipe);
 
     // Checking if the recipe is bookmarked or not
-    if (state.bookmarks?.some(bookmark => bookmark.id === state.recipe.id))
+    if (state.bookmarks.some(bookmark => bookmark.id === state.recipe.id))
       state.recipe.bookmarked = true;
     else state.recipe.bookmarked = false;
   } catch (err) {
@@ -105,6 +105,7 @@ export const updateServings = function (numServings) {
 export const toggleBookmark = function () {
   // If recipe not bookmarked, bookmark it
   if (!state.recipe.bookmarked) {
+    console.log(state.bookmarks);
     state.bookmarks.push(state.recipe);
     state.recipe.bookmarked = true;
   }
@@ -121,7 +122,9 @@ export const toggleBookmark = function () {
 
 // Getting bookmarks from the local storage on page load
 const init = function () {
-  state.bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+  const storage = JSON.parse(localStorage.getItem('bookmarks'));
+
+  if (storage) state.bookmarks = storage;
 };
 
 init();

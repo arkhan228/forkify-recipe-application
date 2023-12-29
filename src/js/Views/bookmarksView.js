@@ -7,7 +7,7 @@ class PaginationView extends View {
 
   _generateMarkup() {
     return this._data
-      ?.map(bookmark => previewView._generateMarkup(bookmark))
+      .map(bookmark => previewView._generateMarkup(bookmark))
       .join('');
   }
 
